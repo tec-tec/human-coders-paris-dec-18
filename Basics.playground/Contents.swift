@@ -107,8 +107,3 @@ let appleFrance = Building()
 appleFrance.floors = [floor1, floor2]
 appleFrance.address = "16 place d'Iéna"
 
-var appleMunchen = appleFrance.copy()
-appleMunchen.address = "Munchen"
-
-appleFrance.address
-
