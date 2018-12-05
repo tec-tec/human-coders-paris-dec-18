@@ -154,3 +154,20 @@ func tip(for amount: Double = 100) -> (five: Double, ten: Double, fifteen: Doubl
 
 let myTip = tip(for: 100)
 myTip.five
+
+
+let intString = "jyrjyf"
+let intValue = Int(intString)
+
+if intValue != nil {
+    let sureIntValue = intValue!
+    sureIntValue * 2
+} else {
+    print("Problème")
+}
+
+if let sureInt = Int(intString) {
+    sureInt * 2
+} else {
+    print("Problème")
+}

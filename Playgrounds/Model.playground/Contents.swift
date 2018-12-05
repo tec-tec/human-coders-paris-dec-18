@@ -5,7 +5,7 @@ struct Member {
     let firstName: String
     let lastName: String
     let birthDate: Date
-    var avatarUrl: URL
+    var avatarUrl: URL?
 
     var function: String
     var groups: [Group]
@@ -111,8 +111,7 @@ struct Cotisation {
 
 
 let asso = Association(name: "Toto", legalID: "521410290", address: "12 Rue duprés", cotisationCost: 1000, cotisationDuration: 3600)
-let url = URL(string: "http://zhekfhekrjfhkerhgk")!
-let me = Member(firstName: "Ludovic", lastName: "Ollagnier", birthDate: Date(), avatarUrl: url, function: "iOS Dev", groups: [], cotisations: [], phoneNumber: "", mail: "")
+let me = Member(firstName: "Ludovic", lastName: "Ollagnier", birthDate: Date(), avatarUrl: nil, function: "iOS Dev", groups: [], cotisations: [], phoneNumber: "", mail: "")
 asso.addMember(me)
 
 guard me.lastName == "Ollagnier" else {
