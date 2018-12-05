@@ -63,6 +63,7 @@ villes.append("Saint-Denis")
 villes[3]
 villes.contains("Lyon")
 villes.count
+villes.remove(at: 1)
 
 nbHabitants["Paris"]
 
@@ -107,3 +108,49 @@ let appleFrance = Building()
 appleFrance.floors = [floor1, floor2]
 appleFrance.address = "16 place d'Iéna"
 
+let a = 5
+let b = 2
+
+let c = Double(a) / Double(b)
+
+//: # Fonction
+
+// Fonction simple sans paramètre / sans retour
+func eat() {
+    print("Je mange")
+}
+
+eat()
+
+func eat(_ food: String) {
+    print("Je mange \(food)")
+}
+
+eat("Pizza")
+
+func eat(_ food: String, with friend: String, at place: String) {
+
+    print("Je mange \(food)")
+    print("Avec \(friend)")
+    print("Lieu  \(place)")
+}
+
+eat("Pizza", with: "Paul", at: "McDo")
+
+func add(_ firstNumber: Int, to secondNumber: Int) -> (n1: Int, n2: Int, addition: Int) {
+
+    return (firstNumber, secondNumber, firstNumber + secondNumber)
+}
+
+let result = add(10, to: 5)
+
+var myPlaces: Set = ["Bordeaux", "Paris", "Lyon"]
+myPlaces.insert("Saint-Leu")
+myPlaces.insert("Saint-Leu")
+
+func tip(for amount: Double = 100) -> (five: Double, ten: Double, fifteen: Double) {
+    return (5, 10, 15)
+}
+
+let myTip = tip(for: 100)
+myTip.five
