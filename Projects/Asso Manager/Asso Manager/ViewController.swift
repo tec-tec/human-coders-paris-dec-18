@@ -28,8 +28,20 @@ class ViewController: UIViewController {
     }
 
     @IBAction func save(_ sender: Any) {
-    }
 
+        let indexGender = genderSegmentedControl.selectedSegmentIndex
+
+        guard let gender = Gender(rawValue: indexGender) else { return }
+        guard let firstName = firstNameTextField.text else { return }
+        guard let lastName = lastNameTextField.text else { return }
+        guard let function = functionTextField.text else { return }
+        guard let phone = phoneTextField.text else { return }
+
+        let newMember = Member(fName: firstName, lName: lastName, gender: gender, birthDate: Date(), avatarURL: nil, function: function, groups: [], cotisation: [], phoneNumber: phone, mail: mailTextField.text)
+
+
+    }
+    
     @IBAction func cancel(_ sender: Any) {
     }
     
