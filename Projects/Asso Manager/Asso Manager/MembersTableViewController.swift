@@ -16,9 +16,14 @@ class MembersTableViewController: UITableViewController {
         super.viewDidLoad()
 
         let firstMember = Member(fName: "Ludovic", lName: "Ollagnier", gender: .male, birthDate: Date(), avatarURL: nil, function: "iOS Trainer", groups: [], cotisation: [], phoneNumber: "1234567890", mail: nil)
-        
-        association.addMember(firstMember)
 
+        association.addMember(firstMember)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -87,14 +92,23 @@ class MembersTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+
+        if segue.identifier == "goForm" {
+
+            guard let formViewController = segue.destination as? ViewController else { fatalError("Wrong type received") }
+            formViewController.association = self.association
+
+        } else if segue.identifier == "goDetails" {
+
+        }
     }
-    */
+
 
 }

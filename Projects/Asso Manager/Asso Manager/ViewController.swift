@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     var datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
 
+    var association: Association?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -57,14 +59,20 @@ class ViewController: UIViewController {
         guard let phone = phoneTextField.text else { return }
 
         let newMember = Member(fName: firstName, lName: lastName, gender: gender, birthDate: Date(), avatarURL: nil, function: function, groups: [], cotisation: [], phoneNumber: phone, mail: mailTextField.text)
+        association?.addMember(newMember)
 
-        print(newMember)
+        tchao()
     }
 
     @IBAction func cancel(_ sender: Any) {
     }
     
     @IBAction func addCotisation(_ sender: Any) {
+    }
+
+    func tchao() {
+        dismiss(animated: true, completion: nil)
+
     }
 }
 

@@ -226,7 +226,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mzf-sa-MPA" kind="show" id="K1a-rX-YeF"/>
+                                    <segue destination="mzf-sa-MPA" kind="show" identifier="goDetails" id="K1a-rX-YeF"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toto" id="s3s-fM-uDT">
@@ -256,7 +256,7 @@
                     <navigationItem key="navigationItem" title="Members" id="AwQ-Ca-0Tk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BIc-Mz-0p6">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="presentation" id="IFs-yZ-A0K"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="goForm" id="IFs-yZ-A0K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
