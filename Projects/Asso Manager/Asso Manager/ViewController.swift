@@ -19,9 +19,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var avatarImageView: UIImageView!
 
+    var datePicker = UIDatePicker()
+    let dateFormatter = DateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        datePicker.datePickerMode = .date
+        datePicker.maximumDate = Date()
+        birthDateTextField.inputView = datePicker
+
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+
+        // Add action in code
+        datePicker.addTarget(self, action: #selector(datePickerDidChange), for: .valueChanged)
+    }
+
+    @objc func datePickerDidChange() {
+
+        let date = datePicker.date
+        birthDateTextField.text = dateFormatter.string(from: date)
     }
 
     @IBAction func addAvatar(_ sender: Any) {
@@ -39,9 +58,9 @@ class ViewController: UIViewController {
 
         let newMember = Member(fName: firstName, lName: lastName, gender: gender, birthDate: Date(), avatarURL: nil, function: function, groups: [], cotisation: [], phoneNumber: phone, mail: mailTextField.text)
 
-
+        print(newMember)
     }
-    
+
     @IBAction func cancel(_ sender: Any) {
     }
     
