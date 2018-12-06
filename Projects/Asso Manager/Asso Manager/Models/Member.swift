@@ -16,6 +16,10 @@ struct Member {
     let birthDate: Date
     var avatarUrl: URL?
 
+    var fullName: String {
+        return firstName + " " + lastName
+    }
+
     var function: String
     var groups: [Group]
     var cotisations: [Cotisation]

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331FEAEA21B97EBB00815F8D /* MembersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331FEAE921B97EBB00815F8D /* MembersTableViewController.swift */; };
 		33E7F71721B8159E0033977B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7F71621B8159E0033977B /* AppDelegate.swift */; };
 		33E7F71921B8159E0033977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7F71821B8159E0033977B /* ViewController.swift */; };
 		33E7F71C21B8159E0033977B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E7F71A21B8159E0033977B /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		331FEAE921B97EBB00815F8D /* MembersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewController.swift; sourceTree = "<group>"; };
 		33E7F71321B8159E0033977B /* Asso Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Asso Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E7F71621B8159E0033977B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33E7F71821B8159E0033977B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				33E7F71621B8159E0033977B /* AppDelegate.swift */,
 				33E7F71821B8159E0033977B /* ViewController.swift */,
 				33E7F71A21B8159E0033977B /* Main.storyboard */,
+				331FEAE921B97EBB00815F8D /* MembersTableViewController.swift */,
 				33E7F73421B81FBE0033977B /* Models */,
 				33E7F71D21B815A00033977B /* Assets.xcassets */,
 				33E7F71F21B815A00033977B /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				33E7F71921B8159E0033977B /* ViewController.swift in Sources */,
 				33E7F72D21B81F230033977B /* Right.swift in Sources */,
 				33E7F72B21B81EB60033977B /* Association.swift in Sources */,
+				331FEAEA21B97EBB00815F8D /* MembersTableViewController.swift in Sources */,
 				33E7F72F21B81F3F0033977B /* Group.swift in Sources */,
 				33E7F72921B81E9D0033977B /* Member.swift in Sources */,
 				33E7F73621B820EC0033977B /* Gender.swift in Sources */,
