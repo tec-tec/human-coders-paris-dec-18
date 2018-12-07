@@ -84,7 +84,10 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
 
         let indexGender = genderSegmentedControl.selectedSegmentIndex
 
-        guard let gender = Gender(rawValue: indexGender) else { return }
+        guard let gender = Gender(rawValue: indexGender) else {
+            warnWithColor(.red, for: genderSegmentedControl)
+            return
+        }
         guard let firstName = firstNameTextField.text else { return }
         guard let lastName = lastNameTextField.text else { return }
         guard let function = functionTextField.text else { return }
@@ -117,6 +120,30 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+
+    func changeBackgroundColor(to color: UIColor, for view: UIView) {
+
+        UIView.animate(withDuration: 4) {
+            view.backgroundColor = color
+        }
+    }
+
+    func warnWithColor(_ color: UIColor, for view: UIView) {
+
+        let originalColor = view.backgroundColor ?? .white
+
+        UIView.animateKeyframes(withDuration: 1, delay: 0, options: [.repeat], animations: {
+
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.5, animations: {
+                view.backgroundColor = color
+            })
+
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.5, animations: {
+                view.backgroundColor = originalColor
+            })
+
+        }, completion: nil)
     }
 }
 
