@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemberFormViewController.swift
 //  Asso Manager
 //
 //  Created by Ludovic Ollagnier on 05/12/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MemberFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var genderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -46,6 +46,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addAvatar(_ sender: Any) {
+
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
+        guard UIImagePickerController.isCameraDeviceAvailable(.rear) else { return }
+
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.cameraDevice = .rear
+        imagePicker.delegate = self
+
+        present(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func save(_ sender: Any) {
@@ -73,6 +83,17 @@ class ViewController: UIViewController {
     func tchao() {
         dismiss(animated: true, completion: nil)
 
+    }
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        guard let original = info[.originalImage] as? UIImage else { return }
+        avatarImageView.image = original
+        dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

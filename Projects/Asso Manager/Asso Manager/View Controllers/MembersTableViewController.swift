@@ -102,7 +102,7 @@ class MembersTableViewController: UITableViewController {
 
         if segue.identifier == "goForm" {
 
-            guard let formViewController = segue.destination as? ViewController else { fatalError("Wrong type received") }
+            guard let formViewController = segue.destination as? MemberFormViewController else { fatalError("Wrong type received") }
             formViewController.association = self.association
 
         } else if segue.identifier == "goDetails" {

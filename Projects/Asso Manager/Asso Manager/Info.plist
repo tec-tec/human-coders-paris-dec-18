@@ -45,5 +45,7 @@
 	<string>Pourquoi on a besoin de la geoloc</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Explication</string>
+	<key>NSCameraUsageDescription</key>
+	<string>J&apos;ai besoin de te voir !</string>
 </dict>
 </plist>
