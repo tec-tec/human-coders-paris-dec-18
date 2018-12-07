@@ -37,6 +37,28 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
 
         // Add action in code
         datePicker.addTarget(self, action: #selector(datePickerDidChange), for: .valueChanged)
+
+        downloadTemplateImage()
+    }
+
+    func downloadTemplateImage() {
+
+        let urlString = "https://developer.apple.com/assets/elements/icons/core-ml/core-ml-256x256_2x.png"
+        guard let url = URL(string: urlString) else { return }
+
+        let defaultSession = URLSession.shared
+        let dataTask = defaultSession.dataTask(with: url) { (data, response, error) in
+
+            if let data = data, let image = UIImage(data: data) {
+                //Show image
+                print("YESS")
+
+                DispatchQueue.main.async {
+                    self.avatarImageView.image = image
+                }
+            }
+        }
+        dataTask.resume()
     }
 
     @objc func datePickerDidChange() {
@@ -75,6 +97,7 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     @IBAction func cancel(_ sender: Any) {
+        tchao()
     }
     
     @IBAction func addCotisation(_ sender: Any) {
