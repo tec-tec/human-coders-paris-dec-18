@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Right: Int {
+enum Right: Int, Codable {
     case guest
     case member
     case admin

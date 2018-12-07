@@ -96,6 +96,15 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
         let newMember = Member(fName: firstName, lName: lastName, gender: gender, birthDate: Date(), avatarURL: nil, function: function, groups: [], cotisation: [], phoneNumber: phone, mail: mailTextField.text)
         association?.addMember(newMember)
 
+        let json = association?.archiveJSON()
+        let plist = association?.archivePlist()
+
+        print(json ?? "No json")
+        print(plist ?? "no plist")
+
+        if let json = json {
+            saveToDisk(data: json)
+        }
         tchao()
     }
 
@@ -144,6 +153,16 @@ class MemberFormViewController: UIViewController, UIImagePickerControllerDelegat
             })
 
         }, completion: nil)
+    }
+
+    func saveToDisk(data: Data) {
+
+        let fileManager = FileManager.default
+
+        guard var URL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        URL = URL.appendingPathComponent("savedAsso.plist")
+
+        try? data.write(to: URL)
     }
 }
 

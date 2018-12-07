@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Cotisation {
+struct Cotisation: Codable {
     let date: Date
     let cost: Float
     let validity: TimeInterval

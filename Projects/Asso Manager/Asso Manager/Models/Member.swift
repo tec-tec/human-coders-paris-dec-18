@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Member {
+struct Member: Codable {
 
     let gender: Gender
     let firstName: String

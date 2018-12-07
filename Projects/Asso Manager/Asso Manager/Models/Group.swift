@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Group {
+class Group: Codable {
 
     let name: String
     var members: [Member]

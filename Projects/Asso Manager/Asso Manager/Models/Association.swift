@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Association {
+class Association: Codable {
 
     // Properties
     let name: String
@@ -53,4 +53,30 @@ class Association {
     //    func purgeMembers() -> [Member] {
     //
     //    }
+
+
+    // We should think about factorising
+    func archiveJSON() -> Data? {
+
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(self)
+
+        return data
+    }
+
+    func archivePlist() -> Data? {
+
+        let encoder = PropertyListEncoder()
+        let data = try? encoder.encode(self)
+
+        return data
+    }
+
+    static func savedAsso(from data: Data) -> Association? {
+
+        let decoder = JSONDecoder()
+        let asso = try? decoder.decode(Association.self, from: data)
+
+        return asso
+    }
 }
