@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Pourquoi on a besoin de la geoloc</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Explication</string>
 </dict>
 </plist>
